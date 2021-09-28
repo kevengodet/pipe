@@ -1,0 +1,11 @@
+{
+    "name": "keven/pipe",
+    "description": "Dédicace à Georges Brassens, ça va de soi.",
+    "licence": "MIT",
+    "homepage": "https://github.com/kevengodet/pipe",
+    "autoload": {
+        "psr-4": {
+            "Keven\\Pipe\\": "src"
+        }
+    }
+}
