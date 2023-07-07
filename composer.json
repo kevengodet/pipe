@@ -1,6 +1,7 @@
 {
     "name": "keven/pipe",
-    "licence": "MIT",
+    "description": "Data processing pipe",
+    "license": "MIT",
     "homepage": "https://github.com/kevengodet/pipe",
     "autoload": {
         "psr-4": {
