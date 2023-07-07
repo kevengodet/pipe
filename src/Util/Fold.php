@@ -1,6 +1,8 @@
 <?php
 
-namespace Keven\Pipe;
+declare(strict_types=1);
+
+namespace Keven\Pipe\Util;
 
 final class Fold
 {
