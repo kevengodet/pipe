@@ -22,7 +22,7 @@ the component.
     ->filter(function($numbers) {
         foreach ($numbers as $number) {
 
-            // Drop zeros
+            // Discard zeros
             if (0 === $number) {
                 continue;
             }
@@ -42,8 +42,8 @@ the component.
         return chr(ord('a') + ($number - 1) % 26);
     })
 
-    // Drop items for which the callable returns true
-    ->drop(function($letter) {
+    // Discard items for which the callable returns true
+    ->discard(function($letter) {
         // Let say we keep only consonants
         return in_array($letter, ['a', 'e', 'i', 'o', 'u', 'y']);
     })

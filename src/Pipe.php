@@ -197,14 +197,14 @@ class Pipe implements \IteratorAggregate, \Countable
     }
 
     /**
-     * Drop items for which the callable returns true.
+     * Discard items for which the callable returns true.
      *
      * @param callable $callable
      *
      * @return Pipe
      * @throws Exception
      */
-    public function drop(callable $callable): self
+    public function discard(callable $callable): self
     {
         return $this->wrap(
             function ($source) use ($callable) {
@@ -222,9 +222,9 @@ class Pipe implements \IteratorAggregate, \Countable
     /**
      * @throws Exception
      */
-    public function dropWhere(string $propertyPath, $value, string $comparator = Comparator::OP_EQUAL): self
+    public function discardWhere(string $propertyPath, $value, string $comparator = Comparator::OP_EQUAL): self
     {
-        return $this->drop(new Comparator($propertyPath, $value, $comparator));
+        return $this->discard(new Comparator($propertyPath, $value, $comparator));
     }
 
     /**
@@ -474,7 +474,7 @@ class Pipe implements \IteratorAggregate, \Countable
             return $this->map(function() use ($name, $arguments) {
                 $args = func_get_args();
 
-                // Drop last func_get_args() because it's the key
+                // Discard last func_get_args() because it's the key
                 $args = array_merge(array_slice($args, 0, -1), $arguments);
 
                 $f = new \ReflectionFunction($name);
